@@ -1,6 +1,13 @@
 # Docker images
 Images for docker if you cannot pull images from docker hub.
 
+
+## Start a mssql-server instance running as the SQL Express edition
+mssqlexpress.rar is the backup of mssql express server
+sudo docker load -i mssqlexpress.rar
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -e "MSSQL_PID=Express" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest 
+
+
 ## Backup
 sudo docker save -o ~/my-backup.tar my-backup
 ## Restore
